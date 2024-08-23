@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+    text-align: center;
+}
+
+.peer-id-container {
+    margin-top: 30px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.peer-id {
+    font-family: 'Courier New', Courier, monospace;
+    color: #000;
+    margin: 10px;
+}
+
+.copy-button {
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.input-group {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.input-group .form-control {
+    margin-top: 20px;
+    height: calc(2.5rem + 2px);
+    font-size: 1.25rem;
+    width: 550px;
+    margin-right: 50px;
+}
+
+.video-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-left: 150px;
+}
+
+.video-section {
+    text-align: center;
+    width: 100%;
+}
+
+.video-label {
+    color: #495057;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.video-box {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 400px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #ced4da;
+}
+
+.btn-secondary, .btn-success {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-section {
+        margin-bottom: 20px;
+    }
+
+    .video-section:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .video-box {
+        height: 300px;
+        max-width: 100%;
+    }
+}
