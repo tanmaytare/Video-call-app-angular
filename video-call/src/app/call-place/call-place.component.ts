@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Peer from 'peerjs';
@@ -6,7 +5,7 @@ import Peer from 'peerjs';
 @Component({
   selector: 'app-call-place',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [FormsModule],
   templateUrl: './call-place.component.html',
   styleUrl: './call-place.component.css'
 })
