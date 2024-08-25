@@ -1,29 +1,32 @@
 <div class="container text-center mt-2">
-    <h1 class="mb-2">Angular Video Call App</h1>
-    <div class="peer-id-container mb-4">
-        <span>Your Peer ID: </span>
-        <span class="peer-id">{{id}}</span>
-        <button class="btn btn-success btn-lg copy-button ms-3" (click)="onCopy()">Copy Invite Code</button>
-    </div>
-    <div class="input-group mb-4 mx-auto" style="max-width: 700px;">
-        <input [(ngModel)]="remoteId" type="text" class="form-control form-control-lg" placeholder="Enter the Peer Id of the room to connect">
-        <button class="btn btn-success btn-lg rounded-start-3" (click)="callFriend()">Call</button>
-    </div>
-    <div class="text-center mb-2">
-        <button class="btn btn-secondary btn-lg" (click)="openCamera()">Open Your Camera</button>
-    </div>
-    <div class="video-container d-flex justify-content-center">
-        <div class="video-section">
-            <h5 class="video-label">You</h5>
-            <div class="video-box">
-                <video src=""  autoplay #currentUser></video>
-            </div>
-        </div>
-        <div class="video-section ms-3">
-            <h5 class="video-label">Your friend</h5>
-            <div class="video-box">
-                <video src="" autoplay #remoteUser></video>
-            </div>
-        </div>
-    </div>
+  <h1 class="mb-2">Angular Video Call App</h1>
+  <div class="peer-id-container mb-4">
+      <span>Your Peer ID: </span>
+      <span class="peer-id">{{id}}</span>
+      <button class="btn btn-success btn-lg copy-button ms-3" (click)="onCopy()">Copy Invite Code</button>
+  </div>
+  <div class="input-group mb-4 mx-auto" style="max-width: 700px;">
+      <input [(ngModel)]="remoteId" type="text" class="form-control form-control-lg" placeholder="Enter the Peer Id of the room to connect">
+      <button class="btn btn-success btn-lg rounded-start-3" (click)="callFriend()" [disabled]="remoteId.length<5" *ngIf="!remoteStream">Call</button>
+      <button class="btn btn-danger btn-lg ms-2 rounded-start-3" (click)="endCall()" *ngIf="remoteStream">End</button>
+  </div>
+  <div class="text-center mb-2">
+      <button class="btn btn-secondary btn-lg" (click)="openCamera()">Open Your Camera</button>
+      <button class="btn btn-warning btn-lg ms-3" (click)="shareScreen()">Share Screen</button>
+  </div>
+
+  <div class="video-container d-flex justify-content-center">
+      <div class="video-section">
+          <h5 class="video-label">You</h5>
+          <div class="video-box">
+              <video src="" autoplay #currentUser></video>
+          </div>
+      </div>
+      <div class="video-section ms-3">
+          <h5 class="video-label">Your friend</h5>
+          <div class="video-box">
+              <video src="" autoplay #remoteUser></video>
+          </div>
+      </div>
+  </div>
 </div>
