@@ -1,37 +1,44 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
   text-align: center;
+  position: relative;
+  min-height: 100vh;
 }
 
 h1 {
   font-size: 2.5rem;
   color: #343a40;
-  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 .peer-id-container {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 1.25rem;
   font-weight: bold;
   color: #343a40;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .peer-id {
   font-family: 'Courier New', Courier, monospace;
   color: #000;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .copy-button {
   font-size: 1rem;
   border-radius: 10px;
-  margin-left: 50px;
 }
 
 .input-group {
@@ -43,14 +50,18 @@ h1 {
   margin-top: 20px;
   height: calc(2.5rem + 2px);
   font-size: 1.25rem;
-  width: 450px; /* Adjusted width */
-  margin-right: 10px; /* Adjusted spacing */
+  width: 100%;
+  max-width: 450px;
+  margin-right: 10px;
 }
 
-.btn-success {
+.btn-success, .btn-danger, .btn-secondary {
   font-size: 1.25rem;
   padding: 10px 20px;
   border-radius: 10px;
+}
+
+.btn-success {
   background-color: #28a745;
   border: none;
 }
@@ -60,9 +71,8 @@ h1 {
 }
 
 .btn-danger {
-  font-size: 1.25rem;
-  padding: 10px 20px;
-  border-radius: 10px;
+  background-color: #dc3545;
+  border: none;
 }
 
 .btn-danger:hover {
@@ -70,9 +80,6 @@ h1 {
 }
 
 .btn-secondary {
-  font-size: 1.25rem;
-  padding: 10px 20px;
-  border-radius: 10px;
   background-color: #6c757d;
   border: none;
 }
@@ -81,17 +88,28 @@ h1 {
   background-color: #5a6268;
 }
 
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Video Container Styles */
 .video-container {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-left: 150px;
+  gap: 20px;
 }
 
 .video-section {
   text-align: center;
   width: 100%;
+  max-width: 500px;
 }
 
 .video-label {
@@ -103,28 +121,69 @@ h1 {
 .video-box {
   background-color: #e9ecef;
   border-radius: 10px;
-  height: 400px;
+  height: 300px;
   width: 100%;
-  max-width: 500px;
   border: 2px solid #ced4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Help Button Styles */
+.help-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group .form-control {
+    margin-right: 0;
+    width: 100%;
+    max-width: none;
+  }
+
   .video-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .video-section {
-      margin-bottom: 20px;
-  }
-
-  .video-section:not(:last-child) {
-      margin-right: 0;
+    margin-bottom: 20px;
   }
 
   .video-box {
-      height: 300px;
-      max-width: 100%;
+    height: 200px;
   }
 }

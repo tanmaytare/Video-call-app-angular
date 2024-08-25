@@ -1,0 +1,11 @@
+<div class="modal-overlay" *ngIf="isVisible">
+  <div class="modal-content">
+    <h2>How to Start Video Calling</h2>
+    <p><strong>1. Open Your Camera:</strong> Click the "Open Your Camera" button to turn on your camera and microphone.</p>
+    <p><strong>2. Copy Your Peer ID:</strong> Use the "Copy Invite Code" button to copy your Peer ID to the clipboard.</p>
+    <p><strong>3. Call a Friend:</strong> Enter your friend's Peer ID in the text box and click "Call".</p>
+    <p><strong>4. End Call:</strong> Click "End" to terminate the video call.</p>
+    <p><strong>5. Share Screen:</strong> Click "Share Screen" to share your screen with your friend.</p>
+    <button (click)="close()">Let's Call</button>
+  </div>
+</div>

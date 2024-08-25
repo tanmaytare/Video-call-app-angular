@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Peer from 'peerjs';
+import { HelpMeComponent } from "../help-me/help-me.component";
 
 @Component({
   selector: 'app-call-place',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule, HelpMeComponent],
   templateUrl: './call-place.component.html',
   styleUrls: ['./call-place.component.css']
 })
@@ -18,11 +19,14 @@ export class CallPlaceComponent implements OnInit {
   public currentStream: any;
   public remoteStream: any;
   private currentPeer: any;
+  showHelpModal: boolean = false; // Control modal visibility
 
   @ViewChild('currentUser') currentUser: ElementRef | undefined;
   @ViewChild('remoteUser') remoteUser: ElementRef | undefined;
 
   ngOnInit(): void {
+
+    this.showHelpModal = true;
     this.peer.on('open', (id: string) => {
       console.log('My peer ID is: ' + id);
       this.id = id;
@@ -38,6 +42,10 @@ export class CallPlaceComponent implements OnInit {
         }
       });
     });
+  }
+
+  openHelp() {
+    this.showHelpModal = !this.showHelpModal; // Toggle modal visibility
   }
 
   openCamera() {
@@ -140,5 +148,4 @@ export class CallPlaceComponent implements OnInit {
     this.isCameraOn = false;
     this.remoteId = "";
   }
-
 }
